@@ -13,3 +13,5 @@ function minhaFuncao(){
 }
 
 // Tente Invocar essa função agora. "Funcionando no Visual Studio Code"
+
+mi
