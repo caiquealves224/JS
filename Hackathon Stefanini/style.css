@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    width: 70vw;
+    margin: 20vh auto;
+}
+
+table{
+    width: 100%;
+}
+
+table tr td{
+    border: 1px solid;
+}
