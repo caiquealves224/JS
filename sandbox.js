@@ -9,21 +9,29 @@ Array.prototype.map2 = function(callback){
 }
 
 const carrinho = [
-    '{"nome": "borracha" , "preco": 3.45}',
-    '{"nome": "caderno" , "preco": 13.90}',
-    '{"nome": "kit de lapis" , "preco": 41.22}',
-    '{"nome": "Caneta" , "preco": 7.50}',
+    {"nome": "borracha" , "preco": 553.45 , "fragil":true},
+    {"nome": "caderno" , "preco": 1113.90, "fragil":"true"},
+    {"nome": "kit de lapis" , "preco": 41.22, "fragil":"true"},
+    {"nome": "Caneta" , "preco": 7.50},
 ]
 
-const precos = carrinho.map(
-    function(e){
-        json = JSON.parse(e);
-        return json.preco;
+// const precos = carrinho.map(
+//     function(e){
+//         json = JSON.parse(e);
+//         return json.preco;
+//     }
+// );
+// precos2 = carrinho.map2(e=>JSON.parse(e)).map2(e=>e.preco);
+
+Array.prototype.filter2 = function (callback){
+    const novo = [];
+    for(i = 0; i < this.length ; i++){
+        
+        callback(this[i],i,this)? novo.push(this[i]) : false ;
     }
-);
+    return novo
+};
 
-console.log(precos);
+let teste = carrinho.filter2(e=>e.preco > 10).filter2(e=>e.fragil);
 
-precos2 = carrinho.map2(e=>JSON.parse(e)).map2(e=>e.preco);
-
-console.log(precos2)
+console.log(teste)
